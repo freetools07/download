@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title and SEO -->
+    <title>A to Z Downloader | Instagram Video, Story & DP Downloader</title>
+    <meta name="description" content="A to Z Downloader is a free, fast, and unique tool to download Instagram videos, reels, full-size profile pictures (DP), and watch stories anonymously.">
+    <meta name="keywords" content="A to Z downloader, instagram downloader, story downloader, dp downloader, save instagram video">
+
+    <!-- Tailwind CSS and Font Awesome Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom styles for active tab and gradients */
+        .tab-active {
+            background-color: #6366f1; /* Indigo */
+            color: white;
+            border-color: #6366f1;
+        }
+        .gradient-button {
+            background-image: linear-gradient(to right, #8b5cf6, #4f46e5); /* Violet to Indigo */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen text-gray-800 font-sans">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900">
+                A to Z <span class="text-indigo-600">Downloader</span>
+            </h1>
+            <p class="text-lg text-gray-600 mt-3">Your All-in-One Instagram Toolkit</p>
+        </header>
+
+        <!-- Main Downloader Section -->
+        <main class="max-w-2xl mx-auto bg-white rounded-2xl shadow-2xl p-6 md:p-8">
+
+            <!-- Tab Navigation -->
+            <div class="flex border-b border-gray-200 mb-6">
+                <button id="tab-post" class="tab-btn flex-1 py-3 px-2 font-bold text-gray-700 border-b-4 tab-active">
+                    <i class="fas fa-photo-film mr-2"></i> Post / Reel
+                </button>
+                <button id="tab-dp" class="tab-btn flex-1 py-3 px-2 font-bold text-gray-500 border-b-4 border-transparent">
+                    <i class="fas fa-user-circle mr-2"></i> Profile Pic (DP)
+                </button>
+                <button id="tab-story" class="tab-btn flex-1 py-3 px-2 font-bold text-gray-500 border-b-4 border-transparent">
+                    <i class="fas fa-history mr-2"></i> Story
+                </button>
+            </div>
+
+            <!-- Tab Content: Post / Reel Downloader -->
+            <div id="content-post" class="tab-content">
+                <p class="text-center text-gray-600 mb-4">Paste the link of any public Instagram post, video, or reel.</p>
+                <form id="form-post">
+                    <div class="flex items-center gap-3">
+                        <input id="input-post" type="text" placeholder="https://www.instagram.com/p/..." class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                        <button type="submit" class="gradient-button text-white font-bold p-4 rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fas fa-arrow-down text-xl"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab Content: DP Downloader -->
+            <div id="content-dp" class="tab-content hidden">
+                <p class="text-center text-gray-600 mb-4">Enter the Instagram username to download the full-size profile picture.</p>
+                <form id="form-dp">
+                    <div class="flex items-center gap-3">
+                        <input id="input-dp" type="text" placeholder="Enter username (e.g., cristiano)" class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                         <button type="submit" class="gradient-button text-white font-bold p-4 rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fas fa-arrow-down text-xl"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab Content: Story Downloader -->
+            <div id="content-story" class="tab-content hidden">
+                <p class="text-center text-gray-600 mb-4">Enter a username to view and download their public stories anonymously.</p>
+                <form id="form-story">
+                    <div class="flex items-center gap-3">
+                        <input id="input-story" type="text" placeholder="Enter username (e.g., therock)" class="w-full p-4 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
+                         <button type="submit" class="gradient-button text-white font-bold p-4 rounded-lg hover:opacity-90 transition-opacity">
+                            <i class="fas fa-arrow-down text-xl"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+             <!-- Error Message Area -->
+            <p id="error-message" class="text-center text-red-500 mt-4 font-semibold hidden"></p>
+
+        </main>
+
+        <!-- Features & How-To Section -->
+        <section class="max-w-4xl mx-auto mt-16 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Simple, Fast, and Reliable</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg"><i class="fas fa-video text-3xl text-indigo-500 mb-3"></i><h3 class="text-xl font-semibold mb-2">High-Quality Downloads</h3><p class="text-gray-600">Save videos and photos in their original quality without any watermarks.</p></div>
+                <div class="bg-white p-6 rounded-lg shadow-lg"><i class="fas fa-user-secret text-3xl text-indigo-500 mb-3"></i><h3 class="text-xl font-semibold mb-2">Completely Anonymous</h3><p class="text-gray-600">View and download stories or profile pictures without anyone knowing.</p></div>
+                <div class="bg-white p-6 rounded-lg shadow-lg"><i class="fas fa-mobile-alt text-3xl text-indigo-500 mb-3"></i><h3 class="text-xl font-semibold mb-2">Works Everywhere</h3><p class="text-gray-600">Our tool is fully responsive and works on mobile phones, tablets, and desktops.</p></div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6 mt-16">
+        <div class="container mx-auto text-center px-4">
+            <p class="font-semibold">A to Z Downloader</p>
+            <p class="text-sm mt-2"><strong>Disclaimer:</strong> This tool is for personal use only. Please respect the copyright of the content owners. We are not affiliated with Instagram.</p>
+        </div>
+    </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-btn');
+        const contents = document.querySelectorAll('.tab-content');
+        const errorMessage = document.getElementById('error-message');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('tab-active', 'text-gray-700'));
+                tabs.forEach(t => t.classList.add('text-gray-500'));
+                contents.forEach(c => c.classList.add('hidden'));
+                errorMessage.classList.add('hidden'); // Hide error on tab switch
+
+                tab.classList.add('tab-active');
+                tab.classList.remove('text-gray-500');
+                const contentId = tab.id.replace('tab-', 'content-');
+                document.getElementById(contentId).classList.remove('hidden');
+            });
+        });
+
+        // --- FIXED AND RELIABLE FORM LOGIC ---
+        const formPost = document.getElementById('form-post');
+        const formDp = document.getElementById('form-dp');
+        const formStory = document.getElementById('form-story');
+
+        const showError = (message) => {
+            errorMessage.textContent = message;
+            errorMessage.classList.remove('hidden');
+        };
+
+        // 1. Post/Reel Downloader
+        formPost.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevents page reload
+            errorMessage.classList.add('hidden');
+            const url = document.getElementById('input-post').value.trim();
+            if (url && url.includes('instagram.com')) {
+                // FIXED: Using a reliable service that accepts the full URL. This prevents 404 errors.
+                const redirectUrl = `https://savefrom.net/${url}`;
+                window.open(redirectUrl, '_blank');
+            } else {
+                showError('Please enter a valid Instagram Post or Reel URL.');
+            }
+        });
+
+        // 2. DP Downloader
+        formDp.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevents page reload
+            errorMessage.classList.add('hidden');
+            const username = document.getElementById('input-dp').value.trim();
+            if (username) {
+                const redirectUrl = `https://www.instadp.io/${username}`;
+                window.open(redirectUrl, '_blank');
+            } else {
+                 showError('Please enter a valid Instagram username.');
+            }
+        });
+
+        // 3. Story Downloader
+        formStory.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevents page reload
+            errorMessage.classList.add('hidden');
+            const username = document.getElementById('input-story').value.trim();
+            if (username) {
+                const redirectUrl = `https://storiesig.info/${username}`;
+                window.open(redirectUrl, '_blank');
+            } else {
+                 showError('Please enter a valid Instagram username.');
+            }
+        });
+    </script>
+
+</body>
+</html>
